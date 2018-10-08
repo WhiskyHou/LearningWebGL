@@ -1,7 +1,7 @@
 let VSHADER =
     'void main() {\n' +
     '   gl_Position = vec4(0.0, 0.0, 0.0, 1.0);\n' +
-    '   gl_PointSize = 10.0;\n' +
+    '   gl_PointSize = 25.0;\n' +
     '}\n';
 
 let FSHADER =
@@ -11,7 +11,8 @@ let FSHADER =
 
 function main() {
     let canvas = document.getElementById('webgl')
-    let gl = getWebGLContext(canvas)
+    let gl = getWebGLContext(canvas, false)     // 通过工具包获得webgl上下文
+    // let gl = canvas.getContext('webgl')      // 直接获得webgl上下文
 
     initShaders(gl, VSHADER, FSHADER)
 
